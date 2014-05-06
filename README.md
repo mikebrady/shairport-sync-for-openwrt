@@ -12,13 +12,13 @@ Once OpenWrt has built successfully, you need to add `shairport` and some packag
 
 
 
-Download the ShairPort OpenWrt package from https://github.com/mikebrady/shairport. Copy the folder `shairport-master` to `~/openwrt/audio/packages` and ensure it is renamed to `shairport`.
+Download the ShairPort OpenWrt package from https://github.com/mikebrady/shairport. Copy the folder to `~/openwrt/audio/packages`.
 
 `cd` to `~/openwrt/audio/` if necessary.
 
 Perform the command `./scripts/feeds install libavahi alsa-lib alsa-utils htop`. Note that while alsa-utils and htop are both useful, they are not needed for shairport to work.
 
-Enter the command `make menuconfig` and make the follwoing selections:
+Enter the command `make menuconfig` and make the following selections:
 
 select `Sound > shairport`;
 select `Network Modules > Sound Support > kmod-sound-core` and `kmod-usb-audio`;
