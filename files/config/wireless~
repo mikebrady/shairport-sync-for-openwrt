@@ -1,0 +1,21 @@
+config wifi-device  radio0
+        option type     mac80211
+        option channel  11
+        option hwmode   11ng
+        option path     'platform/bcm2708_usb/usb1/1-1/1-1.2/1-1.2:1.0'
+        list ht_capab   GF
+        list ht_capab   SHORT-GI-20
+        list ht_capab   SHORT-GI-40
+        list ht_capab   RX-STBC1
+        option htmode   HT20
+
+config wifi-iface
+        option device   radio0
+        option network  wlan
+        option mode     sta
+        option encryption       psk2+aes
+#        option ssid     'Brady and Hayes Mobile'
+#        option key AlKaClNoMi
+        option ssid     'Mike Brady's iPhone 5'
+        option key alphasud
+

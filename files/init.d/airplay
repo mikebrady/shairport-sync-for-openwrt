@@ -1,0 +1,45 @@
+#!/bin/sh /etc/rc.common
+
+NAME=airplay
+START=99
+
+
+#All the option values chosen below are suggested defaults.
+
+handle_airplay() {
+	local config="$1"
+	local custom="$2"
+	local name
+	local port
+	local latency
+	local daemonize
+        local device
+        local devicetype
+        local volumecontrolname
+		
+	config_get name "$1" name "Shairport 2.0"
+	config_get port "$1" port "5000"
+	config_get_bool daemonize "$1" daemonize true
+	config_get latency "$1" latency "99400"
+        config_get device "$1" device "default"
+        config_get devicetype "$1" devicetype "default"
+        config_get volumecontrolname "$1" volumecontrolname "default"
+        
+        if [ daemonize ] ; then
+		shairport -d -a "$name" -p "$port" -L "$latency" -- -d "$device" -t "$devicetype" -c "$volumecontrolname"
+	else
+		shairport -a "$name" -p "$port" -L "$latency" -- -d "$device" -t "$devicetype" -c "$volumecontrolname"
+	fi
+		
+}
+
+start() {
+	config_load airplay
+	config_foreach handle_airplay airplay
+}
+
+stop() {
+	killall -9 shairport
+}
+
+
