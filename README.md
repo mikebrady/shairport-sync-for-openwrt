@@ -8,7 +8,7 @@ Instructions
 We assume that you have downloaded the OpenWrt build system as shown in http://wiki.openwrt.org/doc/howto/build. Follow the instructions there to select the architecture you want and do a standard build. Once OpenWrt has built successfully, you need to add `shairport` and some packages it relies on.
 
 
-Let's assume you have downloaded and built OpenWrt in `~/openwrt/audio`. Download the ShairPort OpenWrt package from https://github.com/mikebrady/shairport and copy the folder to `~/openwrt/audio/packages`.
+Let's assume you have downloaded and built OpenWrt in `~/openwrt/audio`. Download the ShairPort OpenWrt package from https://github.com/mikebrady/shairport and copy the folder into `~/openwrt/audio/packages/`.
 
 `cd` to `~/openwrt/audio/` if necessary.
 
