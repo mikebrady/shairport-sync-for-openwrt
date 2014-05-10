@@ -37,6 +37,6 @@ Enter the command `make menuconfig` and make the following selections:
 * select `Network > IP Addresses and Names > avahi-autoipd`
 
 
-Having confirmed your choices and exited do a `make`. That's it -- the image should be ready.
+Having exited and confirmed your choices, do a `make`. That's it -- the image should be ready.
 
 
