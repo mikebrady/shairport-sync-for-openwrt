@@ -15,7 +15,7 @@ Stage 2
 -------
 Let's assume you have downloaded and built OpenWrt in `~/openwrt/audio`. 
 
-Download the ShairPort OpenWrt package from https://github.com/mikebrady/shairport and copy the folder into `~/openwrt/audio/packages/` giving you a folder `~/openwrt/audio/packages/`.
+Download the Shairport for OpenWrt package from https://github.com/mikebrady/shairport and copy the folder into `~/openwrt/audio/packages/` giving you a folder `~/openwrt/audio/packages/`.
 
 `cd` to `~/openwrt/audio/` if necessary.
 
