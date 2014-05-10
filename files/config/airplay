@@ -1,5 +1,5 @@
 #Default, for the default soundcard, volume control by software.                                                           
-#Troubleshooting hint: make sure the soundcard's volume is turned up fully -- use alsamixer or amixer to find the control
+#Troubleshooting hint: make sure the soundcard's volume is turned up fully -- use alsamixer or amixer
 config airplay                                                                                                      
        option name 'Shairport 2.0'  #This is the default value.                                                                                      
        option device default                                                             
