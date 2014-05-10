@@ -15,7 +15,7 @@ Stage 2
 -------
 Let's assume you have downloaded and built OpenWrt in `~/openwrt/audio`. 
 
-Download the Shairport for OpenWrt package from https://github.com/mikebrady/shairport and copy the folder into `~/openwrt/audio/packages/` giving you a folder `~/openwrt/audio/packages/shairport`.
+Download the Shairport 2.0 for OpenWrt package from https://github.com/mikebrady/shairport and copy the folder into `~/openwrt/audio/packages/` giving you a folder `~/openwrt/audio/packages/shairport`.
 
 `cd` to `~/openwrt/audio/` if necessary.
 
@@ -27,7 +27,7 @@ Perform the command
 
 `./scripts/feeds install libavahi alsa-lib alsa-utils htop`
 
-This will install these packages into the OpenWrt build system if they are not already in place. Note that `alsa-utils` and `htop` are both useful, but they are not needed for shairport to work.
+This will install these packages into the OpenWrt build system if they are not already in place. Note that `alsa-utils` and `htop` are both useful, but they are not needed for Shairport to work.
 
 Enter the command `make menuconfig` and make the following selections:
 
