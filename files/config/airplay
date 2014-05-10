@@ -1,9 +1,9 @@
 #Uncomment one of the config stanzas below.
 
-#Default, for soundcard 0, no special information about it                                                           
+#Default, for the default soundcard, volume control by software.                                                           
 config airplay                                                                                                      
        option name 'Shairport 2.0'  #This is the default value.                                                                                      
-       option device 'hw:0' #This is the default value.                                                             
+       option device default                                                             
        option latency 99400 #This is the default value.                                                             
                                                                                                                      
 #For Raspberry Pi using the built-in soundcard for the headphone jack                                                
