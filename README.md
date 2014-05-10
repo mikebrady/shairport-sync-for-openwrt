@@ -1,7 +1,11 @@
 Shairport 2.0 for OpenWRT
 =========================
 
-This is an OpenWrt package for building and installing ShairPort 2.0, which is at https://github.com/mikebrady/shairport-sync. You need a custom version of OpenWrt which includes support for sound and for usb audio. The approach is to take it in two stages: first, download to build a standard OpenWrt image for your architecture, and then add of the extras needed for Shairport.
+This is an OpenWrt package for building and installing ShairPort 2.0, which is at https://github.com/mikebrady/shairport-sync.
+
+You need a custom version of OpenWrt which includes support for sound and for usb audio.
+
+The approach taken here is to build the custom version in two stages: first, download to build a standard OpenWrt image for your architecture, and, second, add Shairport and all the extras it depends on.
 
 Stage 1
 -------
