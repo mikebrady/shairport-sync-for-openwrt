@@ -9,7 +9,7 @@ The approach taken here is to build the custom version in two stages: first, dow
 
 Stage 1
 -------
-We assume that you have downloaded the OpenWrt build system as shown in http://wiki.openwrt.org/doc/howto/build. Follow the instructions there to select the architecture you want and do a standard build. Once OpenWrt has built successfully, you need to add `shairport` and some packages it relies on.
+We assume that you have downloaded the OpenWrt build system as shown in http://wiki.openwrt.org/doc/howto/build. Follow the instructions there to select the architecture you want and do a standard build. Once OpenWrt has built successfully, you need to add Shairport and some packages it relies on.
 
 Stage 2
 -------
