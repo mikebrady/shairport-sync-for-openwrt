@@ -15,7 +15,7 @@ Stage 2
 -------
 Let's assume you have downloaded and built OpenWrt in `~/openwrt/audio`. 
 
-Download the Shairport 2.0 for OpenWrt package from https://github.com/mikebrady/shairport and copy the folder into `~/openwrt/audio/packages/` giving you a folder `~/openwrt/audio/packages/shairport`.
+Download the Shairport 2.0 for OpenWrt package from https://github.com/mikebrady/shairport and copy the folder into `~/openwrt/audio/packages/` giving you a folder `~/openwrt/audio/packages/shairport` (or `~/openwrt/audio/packages/shairport-master` if your download using the "Download ZIP" button).
 
 `cd` to `~/openwrt/audio/` if necessary.
 
@@ -32,7 +32,7 @@ This will install these packages into the OpenWrt build system if they are not a
 Enter the command `make menuconfig` and make the following selections:
 
 * select `Sound > shairport`
-* select `Network Modules > Sound Support > kmod-sound-core` and `kmod-usb-audio`
+* select `Kernel Modules > Sound Support > kmod-sound-core` and `kmod-usb-audio`
 * select `Utilities > alsa-utils` and `Administration > htop`
 * select `Network > IP Addresses and Names > avahi-autoipd`
 
