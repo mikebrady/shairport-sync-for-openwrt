@@ -34,8 +34,6 @@ Enter the command `make menuconfig` and make the following selections:
 * select `Sound > shairport`
 * select `Kernel Modules > Sound Support > kmod-sound-core` and `kmod-usb-audio`
 * select `Utilities > alsa-utils` and `Administration > htop`
-* select `Network > IP Addresses and Names > avahi-autoipd`
-
 
 Having exited and confirmed your choices, do a `make`. That's it -- the image should be ready.
 
