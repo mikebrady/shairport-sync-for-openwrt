@@ -20,6 +20,8 @@ PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION)-$(PKG_SOURCE_VERSION).tar.gz
 
 PKG_BUILD_PARALLEL:=1
 
+PKG_BUILD_DEPENDS:= +libpthread +libopenssl +libavahi-client +alsa-lib +libdaemon
+
 include $(INCLUDE_DIR)/package.mk
 
 CONFIGURE_ARGS+= \
@@ -40,7 +42,7 @@ endef
 
 define Package/shairport
   $(Package/shairport/Default)
-   DEPENDS:= +libpthread +libopenssl +libavahi-client +alsa-lib
+   DEPENDS:= +libpthread +libopenssl +libavahi-client +alsa-lib +libdaemon
 endef
 
 define Package/shairport/description
