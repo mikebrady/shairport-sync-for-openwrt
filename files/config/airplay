@@ -33,9 +33,9 @@
 #        option devicetype hardware      
 #        option volumecontrolname Speaker                               
                                                                         
-#For Raspberry Pi with the first generation iMic or the "Topping TP30 Class T Digital Mini Amplifier"
-config airplay                                                                               
-        option name 'Kitchen'                                                                
-        option device 'hw:1'                                                                 
-        option devicetype hardware                                      
-        option volumecontrolname PCM        
+#For Raspberry Pi with the first generation iMic or the Topping TP30 Class T Digital Mini Amplifier
+#config airplay                                                                               
+#        option name 'Kitchen'                                                                
+#        option device 'hw:1'                                                                 
+#        option devicetype hardware                                      
+#        option volumecontrolname PCM        
