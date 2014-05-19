@@ -5,7 +5,6 @@
 
 # There are more examples below. Uncomment the stanza you want, and make sure to comment out the others
 
-
 #Defaults are as follows                    
 #       option name 'Shairport Sync'                             
 #       option device 'hw:0'                              
@@ -33,7 +32,6 @@
 #        option device 'hw:1'                      
 #        option devicetype hardware      
 #        option volumecontrolname Speaker                               
-                                                                        
                                                                         
 #For Raspberry Pi with the first generation iMic or the "Topping TP30 Class T Digital Mini Amplifier"
 config airplay                                                                               
