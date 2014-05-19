@@ -1,25 +1,43 @@
 #Default, for the default soundcard, volume control by software.                                                           
 #Troubleshooting hint: make sure the soundcard's volume is turned up fully -- use alsamixer or amixer
-config airplay                                                                                                      
-       option name 'Shairport 2.0'  #This is the default value.                                                                                      
-       option device default                                                             
-       option latency 99400 #This is the default value.                                                             
-                                                                                                                     
-#For Raspberry Pi using the built-in soundcard for the headphone jack                                                
-#config airplay                                                                                                      
-#       option name 'Pi'                                                                                             
-#       option daemonize true                                                                                        
-#       option device 'hw:0'                                                                                         
-#       option devicetype hardware                                                                                   
-#       option volumecontrolname PCM                                                                                 
-#       option latency 99400                                                                                         
-                                                                                                                     
-#For Raspberry Pi with the "3D Sound" USB Soundcard                                                                  
-#config airplay                                                                                                       
-#        option name 'Pi'                                                                                             
-#        option daemonize true                                                                                        
-#        option device 'hw:1'                                                                                         
-#        option devicetype hardware                                                                                   
-#        option volumecontrolname Speaker                                                                             
-#        option latency 99400                                                                                         
+#Just uncomment the following line -- all parameters will be default 
+#config airplay
 
+# There are more examples below. Uncomment the stanza you want, and make sure to comment out the others
+
+
+#Defaults are as follows                    
+#       option name 'Shairport Sync'                             
+#       option device 'hw:0'                              
+#       option latency 99400                              
+#       option port 5000                                         
+                                                                 
+#Optional arguments are                                          
+#       option devicetype <devicetype>                    
+#       option volumecontrolname <name>                              
+#       option beforeaction <action>                                 
+#       option afteraction <action>                                  
+                                                                 
+#Here are some sample stanzas:                      
+
+#For Raspberry Pi using the built-in soundcard for the headphone jack
+#config airplay                                                      
+#       option name 'Pi'                                             
+#       option device 'hw:0'                       
+#       option devicetype hardware                 
+#       option volumecontrolname PCM               
+                                                   
+#For Raspberry Pi with the "3D Sound" USB Soundcard                     
+#config airplay                                                         
+#        option name 'Pi'                                               
+#        option device 'hw:1'                      
+#        option devicetype hardware      
+#        option volumecontrolname Speaker                               
+                                                                        
+                                                                        
+#For Raspberry Pi with the first generation iMic or the "Topping TP30 Class T Digital Mini Amplifier"
+config airplay                                                                               
+        option name 'Kitchen'                                                                
+        option device 'hw:1'                                                                 
+        option devicetype hardware                                      
+        option volumecontrolname PCM        
