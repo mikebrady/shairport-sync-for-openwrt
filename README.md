@@ -25,7 +25,7 @@ Make sure all feeds are up to date by performing the following command:
 
 Perform the command
 
-`./scripts/feeds install libavahi alsa-lib alsa-utils htop`
+`./scripts/feeds install libavahi alsa-lib alsa-utils htop libdaemon`
 
 This will install these packages into the OpenWrt build system if they are not already in place. Note that `alsa-utils` and `htop` are both useful, but they are not needed for Shairport to work.
 
