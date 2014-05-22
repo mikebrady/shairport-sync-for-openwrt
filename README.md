@@ -38,7 +38,7 @@ This will install these packages into the OpenWrt build system if they are not a
 
 Running Shairport for the First Time
 ------------------------------------
-Once you install the image on your device and restart it, (and assuming it has a soundcard), Shairport should automatically start as a result of the `/etc/init.d/airplay` initialisation script. The parameters it uses are in `/etc/config/airplay`. If your device's IP number is within your network's subnet (see below), your device will show up in iTunes or iOS as an extra AirPlay device called "<hostname> Shairport Sync".
+Once you install the image on your device and restart it, (and assuming it has a soundcard), Shairport should automatically start as a result of the `/etc/init.d/airplay` initialisation script. The parameters it uses are in `/etc/config/airplay`. If your device's IP number is within your network's subnet (see below), your device will show up in iTunes or iOS as an extra AirPlay device called "(Hostname) Shairport Sync".
 
 Please note that, by default, OpenWrt takes up location 192.168.1.1 and offers telnet access -- see http://wiki.openwrt.org/doc/howto/firstlogin for more information. (BTW, if you've built OpenWrt as instructed here, LuCI is not installed and the Login to WebUI details do not apply.)
 
