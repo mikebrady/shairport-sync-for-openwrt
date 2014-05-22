@@ -13,31 +13,33 @@ We assume that you have downloaded the OpenWrt build system as shown in http://w
 
 Stage 2
 -------
-Let's assume you have downloaded and built OpenWrt in `~/openwrt/audio`. 
+Let's assume you have downloaded and built OpenWrt in `~/openwrt/audio`.
 
-Download the Shairport 2.0 for OpenWrt package from https://github.com/mikebrady/shairport into `~/openwrt/audio/packages/` giving you a folder `~/openwrt/audio/packages/shairport`:
+* Move to the packages directory: `$cd ~/openwrt/audio/packages/`.
 
-`git clone https://github.com/mikebrady/shairport.git`
+* Download the Shairport 2.0 for OpenWrt package:
 
-Next, `cd` to `~/openwrt/audio/`.
+`$git clone https://github.com/mikebrady/shairport.git`
 
-Make sure all feeds are up to date by performing the following command:
+* Next, move back to `~/openwrt/audio/`: `$cd ~/openwrt/audio/`
 
-`./scripts/feeds update -a`
+* Make sure all feeds are up to date by performing the following command:
 
-Perform the command
+`$./scripts/feeds update -a`
 
-`./scripts/feeds install libavahi alsa-lib alsa-utils htop libdaemon`
+* Perform the command
+
+`$./scripts/feeds install libavahi alsa-lib alsa-utils htop libdaemon`
 
 This will install these packages into the OpenWrt build system if they are not already in place. Note that `alsa-utils` and `htop` are both useful, but they are not needed for Shairport to work.
 
-Enter the command `make menuconfig` and make the following selections:
+* Enter the command `make menuconfig` and make the following selections:
 
 * select `Sound > shairport`
 * select `Kernel Modules > Sound Support > kmod-sound-core` and `kmod-usb-audio`
 * select `Utilities > alsa-utils` and `Administration > htop`
 
-Having exited and confirmed your choices, do a `make`. That's it -- the image should be ready.
+* Having exited and confirmed your choices, do a `make`. That's it -- the image should be ready.
 
 Running Shairport for the First Time
 ------------------------------------
