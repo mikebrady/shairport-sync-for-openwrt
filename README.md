@@ -26,7 +26,7 @@ Let's assume you have downloaded and built OpenWrt in `~/openwrt/audio`.
 `$./scripts/feeds update -a`
 
 * Perform the command
-`$./scripts/feeds install libavahi alsa-lib alsa-utils htop libdaemon`
+`$./scripts/feeds install libavahi alsa-lib libdaemon alsa-utils htop `
 This will install these packages into the OpenWrt build system if they are not already in place. Note that alsa-utils and htop are both useful, but they are not needed for Shairport to work.
 
 * Enter the command `make menuconfig` and make the following selections:
