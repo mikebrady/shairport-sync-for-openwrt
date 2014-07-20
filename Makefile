@@ -8,7 +8,7 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=shairport
+PKG_NAME:=shairport-sync
 PKG_VERSION:=2.0
 PKG_RELEASE:=$(PKG_SOURCE_VERSION)
 
@@ -18,11 +18,14 @@ PKG_SOURCE_VERSION:=HEAD
 PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION)-$(PKG_SOURCE_VERSION).tar.gz
 
-PKG_BUILD_PARALLEL:=1
-
-PKG_BUILD_DEPENDS:= +libpthread +libopenssl +libavahi-client +alsa-lib +libdaemon
-
 include $(INCLUDE_DIR)/package.mk
+
+define Package/shairport-sync
+  SECTION:=sound
+  CATEGORY:=Sound
+  DEPENDS:= +libpthread +libopenssl +libavahi-client +alsa-lib +libdaemon
+  TITLE:=ShairPort-Sync 2.0
+endef
 
 CONFIGURE_ARGS+= \
 	--with-alsa \
@@ -33,34 +36,22 @@ define Build/Configure
 	$(call Build/Configure/Default, )
 endef
 
-define Package/shairport/Default
-  SECTION:=sound
-  CATEGORY:=Sound
-  TITLE:=ShairPort 2.0
-endef
-
-
-define Package/shairport
-  $(Package/shairport/Default)
-   DEPENDS:= +libpthread +libopenssl +libavahi-client +alsa-lib +libdaemon
-endef
-
-define Package/shairport/description
-  ShairPort is server software that implements the RAOP protocol for
+define Package/shairport-sync/description
+  ShairPort-sync is server software that implements the RAOP protocol for
   playback of music streamed from a compatible remote client.
-  This is ShairPort 2.0.
+  This is ShairPort-sync 2.0.
 endef
 
 
-define Package/shairport/install
+define Package/shairport-sync/install
 	$(INSTALL_DIR) $(1)/usr/bin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/shairport $(1)/usr/bin/
 	$(INSTALL_DIR) $(1)/etc/init.d
+	$(INSTALL_BIN) files/airplay.init $(1)/etc/init.d/airplay
 	$(INSTALL_DIR) $(1)/etc/config
-	$(INSTALL_BIN) ./files/init.d/airplay $(1)/etc/init.d/
-	$(INSTALL_DATA) ./files/config/airplay $(1)/etc/config/
+	$(INSTALL_CONF) files/airplay.config $(1)/etc/config/airplay
 	$(INSTALL_DATA) ./files/asound.conf $(1)/etc/
 endef
 
 
-$(eval $(call BuildPackage,shairport))
+$(eval $(call BuildPackage,shairport-sync))
