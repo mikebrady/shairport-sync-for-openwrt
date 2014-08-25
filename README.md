@@ -5,12 +5,13 @@ This is an OpenWrt package for building and installing ShairPort Sync, which is 
 Shairport Sync allows you to play audio streamed from an iOS device. The audio stays in sync with other audio devices playing from the same source.
 
 
-This script is for installing Shairport Sync 2.1. Changes from the initial version are intended to use the name shairport-sync in place of "airplay" or "shairport":
-*The application program itself is now called shairport-sync rather than shairport.
-*Filenames have changed from "airplay" to "shairport-sync" in /etc/init.d/ and /etc/config/
-*Stanzas in the config script at /etc/config/shairport-sync/ are no longer titled "airplay" Ð they are titled "shairport-sync" instead.
+This script is for installing Shairport Sync 2.1. Changes from the initial version are intended to use the name shairport-sync in place of "airplay" or "shairport" and to support libsoxr-based resampling:
 
-Shairport Sync itself has new features. For more information, please refer to the README.md at https://github.com/mikebrady/shairport-sync. (This packaging script does not allow you to include support for libsoxr, as libsoxr is not yet part of the OpenWrt trunk.)
+* The application program itself is now called shairport-sync rather than shairport.
+* Filenames have changed from "airplay" to "shairport-sync" in /etc/init.d/ and /etc/config/
+* Stanzas in the config script at /etc/config/shairport-sync/ are no longer titled "airplay" -- they are titled "shairport-sync" instead.
+
+Shairport Sync itself has new features. For more information, please refer to the README.md at https://github.com/mikebrady/shairport-sync. This build of Shairport Sync require a library called libsoxr. At the time of writing, libsoxr is only available in OpenWrt "trunk".
 
 The approach taken here is to build the custom version in two stages: first, download and build a standard OpenWrt image for your architecture, and, second, add Shairport Sync and all the extras it depends on.
 
@@ -42,7 +43,7 @@ Now you can proceed with building Shairport Sync and the other packages it requi
 `$./scripts/feeds update -a`
 
 * Perform the command
-`$./scripts/feeds install libavahi alsa-lib libdaemon alsa-utils htop `
+`$./scripts/feeds install libavahi alsa-lib libdaemon libsoxr alsa-utils htop `
 This will install these packages into the OpenWrt build system if they are not already in place. Note that alsa-utils and htop are both useful, but they are not needed for Shairport Sync to work.
 
 * Enter the command `make menuconfig` and make the following selections:
