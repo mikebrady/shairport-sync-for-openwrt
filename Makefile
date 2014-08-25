@@ -20,13 +20,14 @@ PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION)-$(PKG_SOURCE_VERSION).tar.gz
 
 PKG_BUILD_PARALLEL:=1
 
-PKG_BUILD_DEPENDS:= +libpthread +libopenssl +libavahi-client +alsa-lib +libdaemon
+PKG_BUILD_DEPENDS:= +libpthread +libopenssl +libavahi-client +alsa-lib +libdaemon +libsoxr
 
 include $(INCLUDE_DIR)/package.mk
 
 CONFIGURE_ARGS+= \
 	--with-alsa \
 	--with-avahi \
+	--with-soxr \
 	--with-openssl
 
 define Build/Configure
@@ -43,7 +44,7 @@ endef
 
 define Package/shairport-sync
   $(Package/shairport-sync/Default)
-   DEPENDS:= +libpthread +libopenssl +libavahi-client +alsa-lib +libdaemon
+   DEPENDS:= +libpthread +libopenssl +libavahi-client +alsa-lib +libdaemon +libsoxr
 endef
 
 define Package/shairport-sync/description
