@@ -32,15 +32,18 @@ Before building Shairport Sync, you may need to add a package to your host syste
 * `$sudo apt-get install libxml-parser-perl`
 
 Now you can proceed with building Shairport Sync and the other packages it requires:
+
+* Move to `~/openwrt/audio/`: `$cd ~/openwrt/audio/`
+
+* Make sure all feeds are up to date by performing the following command:
+`$./scripts/feeds update -a`
+
 * Move to the packages directory: `$cd ~/openwrt/audio/package/`.
 
 * Download the `Shairport Sync for OpenWrt` package:
 * `$git clone -b 2.1 https://github.com/mikebrady/shairport-sync-for-openwrt.git`
 
 * Next, move back to `~/openwrt/audio/`: `$cd ~/openwrt/audio/`
-
-* Make sure all feeds are up to date by performing the following command:
-`$./scripts/feeds update -a`
 
 * Perform the command
 `$./scripts/feeds install libavahi alsa-lib libdaemon libsoxr alsa-utils htop `
