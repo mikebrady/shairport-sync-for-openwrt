@@ -18,7 +18,7 @@ Stage 2
 Let's say you have downloaded and built OpenWrt in `~/openwrt/audio`.
 
 Before building Shairport Sync, you need to add a package to your host system, to enable it to build all the extra packages required:
-* Install a Perl XML parser module to your host build system with the follwing command:
+* Install a Perl XML parser module to your host build system with the following command:
 * `$sudo apt-get install libxml-parser-perl`
 
 Now you can proceed with building Shairport Sync and the other packages it requires:
