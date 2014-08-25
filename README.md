@@ -10,7 +10,7 @@ This script is for installing Shairport Sync 2.1. Changes from the initial versi
 *Filenames have changed from "airplay" to "shairport-sync" in /etc/init.d/ and /etc/config/
 *Stanzas in the config script at /etc/config/shairport-sync/ are no longer titled "airplay" Ð they are titled "shairport-sync" instead.
 
-Shairport Sync itself has new features. For more information, please refer to the README.md at https://github.com/mikebrady/shairport-sync.
+Shairport Sync itself has new features. For more information, please refer to the README.md at https://github.com/mikebrady/shairport-sync. (This packaging script does not allow you to include support for libsoxr, as libsoxr is not yet part of the OpenWrt trunk.)
 
 The approach taken here is to build the custom version in two stages: first, download and build a standard OpenWrt image for your architecture, and, second, add Shairport Sync and all the extras it depends on.
 
