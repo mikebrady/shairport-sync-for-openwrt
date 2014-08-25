@@ -5,13 +5,13 @@ This is an OpenWrt package for building and installing ShairPort Sync, which is 
 Shairport Sync allows you to play audio streamed from an iOS device. The audio stays in sync with other audio devices playing from the same source.
 
 
-This script is for installing Shairport Sync 2.1. Changes from the initial version are intended to use the name shairport-sync in place of "airplay" or "shairport" and to support libsoxr-based resampling:
+This script is for installing Shairport Sync 2.1. Changes from the initial version are intended to use the name "shairport-sync" in place of "airplay" or "shairport" and to support libsoxr-based resampling:
 
 * The application program itself is now called shairport-sync rather than shairport.
 * Filenames have changed from "airplay" to "shairport-sync" in /etc/init.d/ and /etc/config/
 * Stanzas in the config script at /etc/config/shairport-sync/ are no longer titled "airplay" -- they are titled "shairport-sync" instead.
 
-Shairport Sync itself has new features. For more information, please refer to the README.md at https://github.com/mikebrady/shairport-sync. This build of Shairport Sync require a library called libsoxr. At the time of writing, libsoxr is only available in OpenWrt "trunk".
+Shairport Sync itself has new features. For more information, please refer to the README.md at https://github.com/mikebrady/shairport-sync. This build of Shairport Sync require a library called `libsoxr`. At the time of writing, `libsoxr` is only available in OpenWrt trunk feed.
 
 The approach taken here is to build the custom version in two stages: first, download and build a standard OpenWrt image for your architecture, and, second, add Shairport Sync and all the extras it depends on.
 
@@ -28,14 +28,14 @@ Stage 2
 Let's say you have downloaded and built OpenWrt in `~/openwrt/audio`.
 
 Before building Shairport Sync, you may need to add a package to your host system to enable it to build all the extra packages required:
-* Install a Perl XML parser module to your host build system with the follwing command:
+* Install a Perl XML parser module to your host build system with the following command:
 * `$sudo apt-get install libxml-parser-perl`
 
 Now you can proceed with building Shairport Sync and the other packages it requires:
 * Move to the packages directory: `$cd ~/openwrt/audio/package/`.
 
 * Download the `Shairport Sync for OpenWrt` package:
-* `$git clone -b 2.1 https://github.com/mikebrady/shairport-sync-for-openwrt.git shairport-sync`
+* `$git clone -b 2.1 https://github.com/mikebrady/shairport-sync-for-openwrt.git`
 
 * Next, move back to `~/openwrt/audio/`: `$cd ~/openwrt/audio/`
 
