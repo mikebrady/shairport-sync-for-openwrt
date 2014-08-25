@@ -8,7 +8,7 @@ Shairport Sync allows you to play audio streamed from an iOS device. The audio s
 This script is for installing Shairport Sync 2.1. Changes from the initial version are intended to use the name shairport-sync in place of "airplay" or "shairport":
 *The application program itself is now called shairport-sync rather than shairport.
 *Filenames have changed from "airplay" to "shairport-sync" in /etc/init.d/ and /etc/config/
-*Stanzas in the config script at /etc/config/shairport-sync/ are no longer titled "airplay" – they are titled "shairport-sync" instead.
+*Stanzas in the config script at /etc/config/shairport-sync/ are no longer titled "airplay" √ê they are titled "shairport-sync" instead.
 
 Shairport Sync itself has new features. For more information, please refer to the README.md at https://github.com/mikebrady/shairport-sync.
 
@@ -34,7 +34,7 @@ Now you can proceed with building Shairport Sync and the other packages it requi
 * Move to the packages directory: `$cd ~/openwrt/audio/package/`.
 
 * Download the `Shairport Sync for OpenWrt` package:
-* `$git clone https://github.com/mikebrady/shairport-sync-for-openwrt.git shairport-sync`
+* `$git clone -b 2.1 https://github.com/mikebrady/shairport-sync-for-openwrt.git shairport-sync`
 
 * Next, move back to `~/openwrt/audio/`: `$cd ~/openwrt/audio/`
 
