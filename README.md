@@ -11,7 +11,7 @@ This script is for installing Shairport Sync 2.1. Changes from the initial versi
 * Filenames have changed from "airplay" to "shairport-sync" in /etc/init.d/ and /etc/config/
 * Stanzas in the config script at /etc/config/shairport-sync/ are no longer titled "airplay" -- they are titled "shairport-sync" instead.
 
-Shairport Sync itself has new features. For more information, please refer to the README.md at https://github.com/mikebrady/shairport-sync. This build of Shairport Sync require a library called `libsoxr`. At the time of writing, `libsoxr` is only available in OpenWrt trunk feed.
+Shairport Sync itself has new features. For more information, please refer to the README.md at https://github.com/mikebrady/shairport-sync. This build of Shairport Sync require a library called `libsoxr`, available in OpenWrt trunk feed.
 
 The approach taken here is to build the custom version in two stages: first, download and build a standard OpenWrt image for your architecture, and, second, add Shairport Sync and all the extras it depends on.
 
@@ -41,7 +41,7 @@ Now you can proceed with building Shairport Sync and the other packages it requi
 * Move to the packages directory: `$cd ~/openwrt/audio/package/`.
 
 * Download the `Shairport Sync for OpenWrt` package:
-* `$git clone -b 2.1 https://github.com/mikebrady/shairport-sync-for-openwrt.git`
+* `$git clone https://github.com/mikebrady/shairport-sync-for-openwrt.git`
 
 * Next, move back to `~/openwrt/audio/`: `$cd ~/openwrt/audio/`
 
