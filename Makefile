@@ -9,7 +9,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=shairport-sync
-PKG_VERSION:=2.1.5
+PKG_VERSION:=2.1.8
 PKG_RELEASE:=$(PKG_SOURCE_VERSION)
 
 PKG_SOURCE_PROTO:=git
@@ -28,7 +28,7 @@ CONFIGURE_ARGS+= \
 	--with-alsa \
 	--with-avahi \
 	--with-soxr \
-	--with-openssl
+	--with-ssl=openssl
 
 define Build/Configure
 	(cd $(PKG_BUILD_DIR); autoreconf -i -f)
