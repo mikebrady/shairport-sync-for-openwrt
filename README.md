@@ -8,7 +8,7 @@ The approach taken here is to build a custom version of OpenWrt in two stages: f
 
 Stage 1
 -------
-We assume that you have downloaded the OpenWrt build system as shown at http://wiki.openwrt.org/doc/howto/build. Follow the instructions there to select the architecture you want and do a standard build of "trunk" OpenWrt. Once OpenWrt has built successfully, you need to add Shairport Sync and some packages it relies on.
+We assume that you have downloaded the OpenWrt build system as shown at http://wiki.openwrt.org/doc/howto/buildroot.exigence (or http://wiki.openwrt.org/doc/howto/build). Follow the instructions there to select the architecture you want and do a standard build of "trunk" OpenWrt. Once OpenWrt has built successfully, you need to add Shairport Sync and some packages it relies on.
 
 Stage 2
 -------
