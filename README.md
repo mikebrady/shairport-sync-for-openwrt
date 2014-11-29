@@ -33,7 +33,7 @@ Now you can proceed with building Shairport Sync and the other packages it requi
 * Next, move back to `~/openwrt/audio/`: `$cd ~/openwrt/audio/`
 
 * Perform the command
-`$./scripts/feeds install libavahi alsa-lib libdaemon libpopt libsoxr alsa-utils htop `
+`$./scripts/feeds install alsa-lib libdaemon libpopt alsa-utils htop `
 This will install these packages into the OpenWrt build system if they are not already in place. Note that `alsa-utils` and `htop` are both very useful, but they are not actually needed for Shairport Sync to work.
 
 * Enter the command `make menuconfig` and make the following selections:
