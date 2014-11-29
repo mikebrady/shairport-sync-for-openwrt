@@ -9,7 +9,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=shairport-sync
-PKG_VERSION:=2.1.10
+PKG_VERSION:=HEAD
 PKG_RELEASE:=$(PKG_SOURCE_VERSION)
 
 PKG_SOURCE_PROTO:=git
@@ -20,14 +20,13 @@ PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION)-$(PKG_SOURCE_VERSION).tar.gz
 
 PKG_BUILD_PARALLEL:=1
 
-PKG_BUILD_DEPENDS:= +libpthread +libopenssl +libavahi-client +alsa-lib +libdaemon +libsoxr
+PKG_BUILD_DEPENDS:= +libpthread +libopenssl +alsa-lib +libdaemon
 
 include $(INCLUDE_DIR)/package.mk
 
 CONFIGURE_ARGS+= \
 	--with-alsa \
-	--with-avahi \
-	--with-soxr \
+	--with-tinysvcmdns \
 	--with-ssl=openssl
 
 define Build/Configure
@@ -41,10 +40,9 @@ define Package/shairport-sync/Default
   TITLE:=iPhone/iTunes/Quicktime Player compatible Audio Player
 endef
 
-
 define Package/shairport-sync
   $(Package/shairport-sync/Default)
-   DEPENDS:= +libpthread +libopenssl +libavahi-client +alsa-lib +libdaemon +libsoxr +libpopt
+   DEPENDS:= +libpthread +libopenssl +alsa-lib +libdaemon +libpopt
 endef
 
 define Package/shairport-sync/description
@@ -53,7 +51,6 @@ define Package/shairport-sync/description
   Shairport Sync implements audio synchronisation, supporting multi-room use.
   Shairport Sync supports audio only.
 endef
-
 
 define Package/shairport-sync/install
 	$(INSTALL_DIR) $(1)/usr/bin
@@ -64,6 +61,5 @@ define Package/shairport-sync/install
 	$(INSTALL_DATA) ./files/config/shairport-sync $(1)/etc/config/
 	$(INSTALL_DATA) ./files/asound.conf $(1)/etc/
 endef
-
 
 $(eval $(call BuildPackage,shairport-sync))
