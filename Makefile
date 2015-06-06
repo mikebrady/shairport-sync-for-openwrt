@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2014 OpenWrt.org  
+# Copyright (C) 2014-2015 OpenWrt.org  
 #
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
@@ -9,7 +9,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=shairport-sync
-PKG_VERSION:=2.1.12
+PKG_VERSION:=2.3.3.2
 PKG_RELEASE:=$(PKG_SOURCE_VERSION)
 
 PKG_SOURCE_PROTO:=git
@@ -20,7 +20,7 @@ PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION)-$(PKG_SOURCE_VERSION).tar.gz
 
 PKG_BUILD_PARALLEL:=1
 
-PKG_BUILD_DEPENDS:= +libpthread +libopenssl +libavahi-client +alsa-lib +libdaemon +libsoxr
+PKG_BUILD_DEPENDS:= +libpthread +libopenssl +libavahi-client +alsa-lib +libdaemon +libsoxr +libconfig
 
 include $(INCLUDE_DIR)/package.mk
 
@@ -44,7 +44,7 @@ endef
 
 define Package/shairport-sync
   $(Package/shairport-sync/Default)
-   DEPENDS:= +libpthread +libopenssl +libavahi-client +alsa-lib +libdaemon +libsoxr +libpopt
+   DEPENDS:= +libpthread +libopenssl +libavahi-client +alsa-lib +libdaemon +libsoxr +libpopt +libconfig
 endef
 
 define Package/shairport-sync/description
@@ -59,9 +59,9 @@ define Package/shairport-sync/install
 	$(INSTALL_DIR) $(1)/usr/bin
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/shairport-sync $(1)/usr/bin/
 	$(INSTALL_DIR) $(1)/etc/init.d
-	$(INSTALL_DIR) $(1)/etc/config
+	$(INSTALL_DIR) $(1)/etc
 	$(INSTALL_BIN) ./files/init.d/shairport-sync $(1)/etc/init.d/
-	$(INSTALL_DATA) ./files/config/shairport-sync $(1)/etc/config/
+	$(INSTALL_DATA) $(PKG_BUILD_DIR)/scripts/shairport-sync.conf $(1)/etc/shairport-sync.conf.sample
 	$(INSTALL_DATA) ./files/asound.conf $(1)/etc/
 endef
 
