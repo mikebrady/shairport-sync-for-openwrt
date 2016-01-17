@@ -49,9 +49,9 @@ $git checkout barrier-breaker
 This will install these packages into the OpenWrt build system if they are not already in place. Note that `alsa-utils` and `htop` are both very useful, but they are not actually needed for Shairport Sync to work.
 
 * Enter the command `make menuconfig` and make the following selections:
-* select one of `Sound > shairport-sync-mini` or `shairport-sync-polarssl` or `shairport-sync-openssl`
-* select `Kernel Modules > Sound Support > kmod-sound-core` and `kmod-usb-audio`
-* optionally, but recommended, select `Utilities > alsa-utils` and `Administration > htop`
+ * select one of `Sound > shairport-sync-mini` or `shairport-sync-polarssl` or `shairport-sync-openssl`
+ * select `Kernel Modules > Sound Support > kmod-sound-core` and `kmod-usb-audio`
+ * optionally, but recommended, select `Utilities > alsa-utils` and `Administration > htop`
 
 * Having exited and confirmed your choices, do a `make`. That's it -- the image should be ready.
 
