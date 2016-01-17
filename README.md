@@ -46,12 +46,13 @@ $git checkout barrier-breaker
 
 * Perform the command
 `$./scripts/feeds install libavahi alsa-lib libdaemon libpopt alsa-utils htop `
-This will install these packages into the OpenWrt build system if they are not already in place. Note that `alsa-utils` and `htop` are both very useful, but they are not actually needed for Shairport Sync to work.
+This will install these packages into the OpenWrt build system if they are not already in place. All these packages are necessary for building Shairport Sync, but they will only be included in the final OpenWrt image if they are needed at runtime. For example, `libavahi` is needed for compilation, but avahi will not be included in the OpenWrt image if you choose the `shairport-sync-mini` package.
+Note that `alsa-utils` and `htop` are both very useful, but they are not actually needed for Shairport Sync to work.
 
 * Enter the command `make menuconfig` and make the following selections:
- * select one of `Sound > shairport-sync-mini` or `shairport-sync-polarssl` or `shairport-sync-openssl`
- * select `Kernel Modules > Sound Support > kmod-sound-core` and `kmod-usb-audio`
- * optionally, but recommended, select `Utilities > alsa-utils` and `Administration > htop`
+ * select exactly one of `Sound > shairport-sync-mini` or `shairport-sync-polarssl` or `shairport-sync-openssl`,
+ * select `Kernel Modules > Sound Support > kmod-sound-core` and `kmod-usb-audio`,
+ * optionally, but recommended, select `Utilities > alsa-utils` and `Administration > htop`.
 
 * Having exited and confirmed your choices, do a `make`. That's it -- the image should be ready.
 
