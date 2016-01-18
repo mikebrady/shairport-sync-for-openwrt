@@ -3,8 +3,7 @@ sudo: required
 dist: trusty
 script:
  - echo "Working directory is `pwd`"
- - make defconfig
- - make
+ - echo "TRAVIS_BUILD_DIR is $TRAVIS_BUILD_DIR"
 
 
 branches:
