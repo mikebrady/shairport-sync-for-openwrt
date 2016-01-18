@@ -23,12 +23,7 @@ before_install:
 addons:
   apt:
     packages:
-    - libasound2-dev
-    - libsoxr-dev
-    - libpopt-dev
     - libssl-dev
-    - libpolarssl-dev
-    - libconfig-dev
     - libncurses5-dev
     - unzip
     - subversion
