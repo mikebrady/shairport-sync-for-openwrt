@@ -7,7 +7,7 @@ script:
  - cd $TRAVIS_BUILD_DIR/sdk/barrier-breaker
  - ./scripts/feeds update -a
  - make defconfig
- - make
+ - make V=s
 
 branches:
   only:
