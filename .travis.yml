@@ -12,8 +12,6 @@ branches:
     - barrier-breaker
 
 before_install:
-  - sudo apt-get -qq update
-  - sudo apt-get install zlib-static
   - git clone git://git.openwrt.org/14.07/openwrt.git barrier-breaker
   - cd barrier-breaker
   - ./scripts/feeds update -a
@@ -28,5 +26,7 @@ addons:
     - unzip
     - subversion
     - zlib1g-dev
-    - zlib-static
+    - gawk
+    - gcc-multilib
+    - flex
     - gettext
