@@ -2,7 +2,9 @@ language: c
 sudo: required
 dist: trusty
 script:
- - cd ../.. && make defconfig && make
+ - cd ~/barrier-breaker
+ - make defconfig
+ - make
 
 
 branches:
@@ -11,6 +13,7 @@ branches:
 
 before_install:
   - sudo apt-get -qq update
+  - sudo apt-get install zlib-static
   - git clone git://git.openwrt.org/14.07/openwrt.git barrier-breaker
   - cd barrier-breaker
   - ./scripts/feeds update -a
