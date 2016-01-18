@@ -4,17 +4,18 @@ dist: trusty
 script:
  - echo "Working directory is `pwd`"
  - echo "TRAVIS_BUILD_DIR is $TRAVIS_BUILD_DIR"
-
+ - cd $TRAVIS_BUILD_DIR/sdk/barrier-breaker
+ - ./scripts/feeds update -a
+ - make defconfig
+ - make
 
 branches:
   only:
     - barrier-breaker
 
 before_install:
+  - mkdir -p $TRAVIS_BUILD_DIR/sdk ; cd $TRAVIS_BUILD_DIR/sdk
   - git clone git://git.openwrt.org/14.07/openwrt.git barrier-breaker
-  - cd barrier-breaker
-  - ./scripts/feeds update -a
-  - cd package
 
   
 addons:
