@@ -40,3 +40,4 @@ addons:
     - gcc-multilib
     - flex
     - gettext
+    - libxml-parser-perl
