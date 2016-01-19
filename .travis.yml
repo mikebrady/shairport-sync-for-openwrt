@@ -18,12 +18,13 @@ install:
  - file $FILE
  - tar xjf $FILE
  - cd $TRAVIS_BUILD_DIR/sdk/OpenWrt-SDK-*
+- mkdir package/$PACKAGE
+- ln -s $TRAVIS_BUILD_DIR/Makefile package/$PACKAGE/
+- ln -s $TRAVIS_BUILD_DIR/files package/$PACKAGE/
+- ./scripts/feeds update -a
+- ./scripts/feeds install alsa-lib libdaemon libpopt alsa-utils 
  
 script:
- - echo "Working directory is `pwd`"
- - echo "TRAVIS_BUILD_DIR is $TRAVIS_BUILD_DIR"
- - ./scripts/feeds update -a
- - make defconfig
  - make
 
 addons:
