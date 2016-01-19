@@ -21,7 +21,7 @@ install:
  - ./scripts/feeds update -
  - ./scripts/feeds install alsa-lib libdaemon libpopt alsa-utils
  - cd package
- - git clone --branch=barrier-breaker https://github.com/mikebrady/shairport-sync-for-openwrt.gi
+ - git clone --branch=barrier-breaker https://github.com/mikebrady/shairport-sync-for-openwrt.git
  - git clone https://github.com/mikebrady/libsoxr-for-openwrt.git
  - cd $TRAVIS_BUILD_DIR/sdk/OpenWrt-SDK-*
 
