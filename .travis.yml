@@ -18,12 +18,13 @@ install:
  - file $FILE
  - tar xjf $FILE
  - cd $TRAVIS_BUILD_DIR/sdk/OpenWrt-SDK-*
-- mkdir package/$PACKAGE
-- ln -s $TRAVIS_BUILD_DIR/Makefile package/$PACKAGE/
-- ln -s $TRAVIS_BUILD_DIR/files package/$PACKAGE/
-- ./scripts/feeds update -a
-- ./scripts/feeds install alsa-lib libdaemon libpopt alsa-utils 
- 
+ - ./scripts/feeds update -
+ - ./scripts/feeds install alsa-lib libdaemon libpopt alsa-utils
+ - cd package
+ - git clone --branch=barrier-breaker https://github.com/mikebrady/shairport-sync-for-openwrt.gi
+ - git clone https://github.com/mikebrady/libsoxr-for-openwrt.git
+ - cd $TRAVIS_BUILD_DIR/sdk/OpenWrt-SDK-*
+
 script:
  - make
 
