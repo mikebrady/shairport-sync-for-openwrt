@@ -19,7 +19,7 @@ install:
  - tar xjf $FILE
  - cd $TRAVIS_BUILD_DIR/sdk/OpenWrt-SDK-*
  
- script:
+script:
  - echo "Working directory is `pwd`"
  - echo "TRAVIS_BUILD_DIR is $TRAVIS_BUILD_DIR"
  - cd $TRAVIS_BUILD_DIR/sdk/barrier-breaker
