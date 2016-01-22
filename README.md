@@ -1,6 +1,6 @@
 Shairport Sync for OpenWrt "Barrier Breaker" and "Chaos Calmer"
 ======================
-The purpose of this package is to allow you to install Shairport Sync into an OpenWrt "Barrier Breaker" system or to update the version of Shairport Sync in "Chaos Calmer". There is already a Shairport Sync package in OpenWrt's package feed from "Designated Driver" onwards, which you should use in preference to this. 
+Use this package to install Shairport Sync into an OpenWrt "Barrier Breaker" system or to update the version of Shairport Sync in "Chaos Calmer". There is already a Shairport Sync package in OpenWrt's package feed from "Designated Driver" onwards, which you should use in preference to this. 
 
 Shairport Sync is an AirPlay audio player -- it plays audio streamed from iTunes, iOS devices and third-party AirPlay sources such as ForkedDaapd and others.
 Audio played by a Shairport Sync-powered device stays synchronised with the source and hence with similar devices playing the same source. In this way, synchronised multi-room audio is possible without difficulty. (Hence the name Shairport Sync, BTW.)
@@ -21,7 +21,7 @@ If you are building Shairport Sync for the first time, you may need to add a pac
 * Install a Perl XML parser module to your host build system with the following command:
 * `$sudo apt-get install libxml-parser-perl`
 
-(**Note**: If you are updating to the latest Shairport Sync from the old version in the Chaos Calmer package feed, use `$make menuconfig` to deselect the `shairport-sync` package and then use `$./scripts/feeds uninstall shairport-sync` to remove the package from the list of packages available.)
+(**Note**: If you are updating to this version of Shairport Sync from the old version in the Chaos Calmer package feed, use `$make menuconfig` to deselect the `shairport-sync` package that comes with Chaos Calmer and then use `$./scripts/feeds uninstall shairport-sync` to remove it from the list of packages available. Once it's been uninstalled, we are free to build this version of Shairport Sync.)
 
 Now you can proceed with building Shairport Sync and the other packages it requires:
 
