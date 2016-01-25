@@ -1,6 +1,6 @@
-Shairport Sync for OpenWrt "Barrier Breaker" and "Chaos Calmer"
+Shairport Sync for OpenWrt
 ======================
-Use this package to install Shairport Sync into an OpenWrt "Barrier Breaker" system or to update the version of Shairport Sync in "Chaos Calmer". There is already a Shairport Sync package in OpenWrt's package feed from "Designated Driver" onwards, which you should use in preference to this. 
+There is already a Shairport Sync package in OpenWrt's package feed from "Designated Driver" onwards, which you should use in preference to this. This is for CI testing only.
 
 Shairport Sync is an AirPlay audio player -- it plays audio streamed from iTunes, iOS devices and third-party AirPlay sources such as ForkedDaapd and others.
 Audio played by a Shairport Sync-powered device stays synchronised with the source and hence with similar devices playing the same source. In this way, synchronised multi-room audio is possible without difficulty. (Hence the name Shairport Sync, BTW.)
