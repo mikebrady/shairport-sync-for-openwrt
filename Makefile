@@ -81,7 +81,6 @@ endef
 
 CONFIGURE_ARGS+= \
 	--with-alsa \
-	--without-pkg-config \
 	--with-metadata
 
 ifeq ($(BUILD_VARIANT),openssl)
