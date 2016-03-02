@@ -9,7 +9,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=shairport-sync
-PKG_VERSION:=2.9.2
+PKG_VERSION:=2.8.1
 PKG_RELEASE:=1
 
 PKG_SOURCE_PROTO:=git
