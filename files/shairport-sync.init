@@ -130,6 +130,13 @@ service_triggers() {
 }
 
 start_service() {
+	local mdns_backend=$(uci show shairport-sync.shairport_sync.mdns_backend);
+	if [ "$(expr match "$mdns_backend" '.*=\(.*\)')" == "'tinysvcmdns'" ]; then
+		route | grep 224 > /dev/null
+		if [ $? -eq 1 ]; then
+			route add -net 224.0.0.0 netmask 224.0.0.0 wlan0
+		fi    
+	fi  
 	config_load shairport-sync
 	config_foreach start_instance shairport-sync
 }

@@ -113,6 +113,7 @@ define Package/shairport-sync/default/install
 	$(INSTALL_DATA) $(PKG_BUILD_DIR)/scripts/shairport-sync.conf $(1)/etc/shairport-sync.conf
 	$(INSTALL_DIR) $(1)/etc/init.d
 	$(INSTALL_BIN) ./files/shairport-sync.init $(1)/etc/init.d/shairport-sync
+	$(INSTALL_BIN) ./files/netwait.init $(1)/etc/init.d/netwait
 	$(INSTALL_DIR) $(1)/etc/config
 	$(INSTALL_DATA) ./files/shairport-sync.config $(1)/etc/config/shairport-sync
 endef

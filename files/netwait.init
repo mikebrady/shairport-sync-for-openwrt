@@ -1,0 +1,24 @@
+#!/bin/sh /etc/rc.common
+
+START=21
+
+wait_for_ifaces() {
+  logger -t netwait "NetWait service: Checking if network interfaces are up ..."
+  local lan_up=`uci -p /var/state  get network.lan.up`
+  local loopback_up=`uci -p /var/state  get network.loopback.up`
+  while [ "$lan_up" != 1 -o "$loopback_up" != 1 ] ; do
+    logger -t netwait "NetWait service: Network interfaces not yet up, waiting ..."
+    sleep 2s
+    lan_up=`uci -p /var/state  get network.lan.up`
+    loopback_up=`uci -p /var/state  get network.loopback.up`
+  done;
+  logger -t netwait "NetWait service: Interfaces UP. Continue service startup."
+}
+
+start() {
+        wait_for_ifaces
+}
+
+stop() {
+        return
+}
